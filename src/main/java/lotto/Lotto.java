@@ -17,4 +17,11 @@ public class Lotto {
     }
 
     // TODO: 추가 기능 구현
+    // 로또 번호가 1~45 범위 내에 있는지 체크
+    private void checkNumberDomain(List<Integer> numbers) {
+        for(int n : numbers) {
+            if (n < 1 || n > 45)
+                throw new IllegalArgumentException("[ERROR] 로또 번호의 숫자 범위는 1~45여야 합니다.");
+        }
+    }
 }
