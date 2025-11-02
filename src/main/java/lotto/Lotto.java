@@ -17,6 +17,8 @@ public class Lotto {
         }
         // 로또 번호 범위 체크
         checkNumberDomain(numbers);
+        // 로또 번호 중복 체크
+        checkDuplicateNumbers(numbers);
     }
 
     // TODO: 추가 기능 구현
