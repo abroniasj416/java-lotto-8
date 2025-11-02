@@ -18,5 +18,9 @@ public class LottoMachine {
     private int calculateLottoCount(int money) {
         return money / 1000;
     }
+
+    public int getLottoCount() {
+        return lottoCount;
+    }
 }
 
