@@ -1,5 +1,6 @@
 package lotto;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class Lotto {
@@ -36,5 +37,9 @@ public class Lotto {
                 throw new IllegalArgumentException("[ERROR] 로또 번호가 중복되었습니다.");
             }
         }
+    }
+
+    private void sortByAsc(List<Integer> numbers) {
+        numbers.sort(Comparator.naturalOrder());
     }
 }
