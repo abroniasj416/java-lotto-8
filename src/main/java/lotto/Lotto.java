@@ -11,10 +11,11 @@ public class Lotto {
     }
 
     private void validate(List<Integer> numbers) {
+        // 로또 번호 개수 체크
         if (numbers.size() != 6) {
             throw new IllegalArgumentException("[ERROR] 로또 번호는 6개여야 합니다.");
         }
-
+        // 로또 번호 범위 체크
         checkNumberDomain(numbers);
     }
 
@@ -24,6 +25,14 @@ public class Lotto {
         for(int n : numbers) {
             if (n < 1 || n > 45)
                 throw new IllegalArgumentException("[ERROR] 로또 번호의 숫자 범위는 1~45여야 합니다.");
+        }
+    }
+
+    private void checkDuplicateNumbers(List<Integer> numbers) {
+        for (int i = 0; i < numbers.size() - 1; i++) {
+            if (numbers.get(i) == numbers.get(i + 1)) {
+                throw new IllegalArgumentException("[ERROR] 로또 번호가 중복되었습니다.");
+            }
         }
     }
 }
