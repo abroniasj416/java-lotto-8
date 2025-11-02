@@ -1,5 +1,10 @@
 package lotto;
 
+import camp.nextstep.edu.missionutils.Randoms;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class LottoMachine {
     // TODO : 구입 금액만큼 로또 발행 수 계산
     private int money;
@@ -21,6 +26,21 @@ public class LottoMachine {
 
     public int getLottoCount() {
         return lottoCount;
+    }
+
+    private Lotto generateSingleLotto() {
+        // TODO: 구현
+        List<Integer> numbers = Randoms.pickUniqueNumbersInRange(1, 45, 6);
+        return new Lotto(numbers);
+    }
+
+    public void generateLottos() {
+        List<Lotto> lottos = new ArrayList<>();
+        for (int i = 0; i < lottoCount; i++) {
+            lottos.add(generateSingleLotto());
+        }
+
+        return lottos;
     }
 }
 
