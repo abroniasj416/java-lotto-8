@@ -1,5 +1,6 @@
 package lotto;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class LottoController {
@@ -14,15 +15,21 @@ public class LottoController {
 
         // "n개를 구매하였습니다."
         outputView.printPurchaseCount(lottoMachine.getLottoCount());
-        outputView.printLottos(lottoMachine.generateLottos());
+        // n줄에 로또번호 6개 출력
+        List<Lotto> lottos = lottoMachine.generateLottos();
+        outputView.printLottos(lottos);
 
         // "당첨 번호를 입력해 주세요."
         List<Integer> winningNumbers = readWinningNumbersWithRetry();
-
         // "보너스 번호를 입력해 주세요."
         int bonusNumber = readBonusNumberWithRetry();
 
         WinningBonusNumbers winningBonusNumbers = new WinningBonusNumbers(winningNumbers, bonusNumber);
+        Statistics statistics = new Statistics();
+        HashMap<Rank, Integer> rankCount = statistics.calculateRankCount(lottos, winningBonusNumbers);
+        // "당첨 통계"
+        outputView.printStatistics(rankCount);
+        outputView.printProfitRate(statistics.calculateProfitRate(rankCount, lottoMachine.getMoney()));
     }
 
     private int readMoneyWithRetry() {
