@@ -42,5 +42,9 @@ public class LottoMachine {
 
         return lottos;
     }
+
+    public int getMoney() {
+        return money;
+    }
 }
 

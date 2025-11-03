@@ -23,7 +23,9 @@ public class OutputView {
         System.out.println("5개 일치 (1,500,000원) - " + rankCount.get(Rank.THIRD) + "개");
         System.out.println("5개 일치, 보너스 볼 일치 (30,000,000원) - " + rankCount.get(Rank.SECOND) + "개");
         System.out.println("6개 일치 (2,000,000,000원) - " + rankCount.get(Rank.FIRST) + "개");
+    }
 
-        // TODO : 수익룰 계산 출력
+    public void printProfitRate(double profitRate) {
+        System.out.println("총 수익률은 " + profitRate + "%입니다.");
     }
 }
