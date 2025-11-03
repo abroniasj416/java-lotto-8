@@ -34,7 +34,7 @@ public class LottoMachine {
         return new Lotto(numbers);
     }
 
-    public void generateLottos() {
+    public List<Lotto> generateLottos() {
         List<Lotto> lottos = new ArrayList<>();
         for (int i = 0; i < lottoCount; i++) {
             lottos.add(generateSingleLotto());
