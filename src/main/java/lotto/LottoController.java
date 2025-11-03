@@ -18,6 +18,9 @@ public class LottoController {
 
         // "당첨 번호를 입력해 주세요."
         List<Integer> winningNumbers = readWinningNumbersWithRetry();
+
+        // "보너스 번호를 입력해 주세요."
+        int bonusNumber = readBonusNumberWithRetry();
     }
 
     private int readMoneyWithRetry() {
@@ -36,6 +39,17 @@ public class LottoController {
                 return inputView.readWinningNumbers();
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage()); // [ERROR]로 시작하는 메시지 출력
+            }
+        }
+    }
+
+    private int readBonusNumberWithRetry() {
+        while (true) {
+            try {
+                return inputView.readBonusNumber();
+            }
+            catch(IllegalArgumentException e) {
+                System.out.println(e.getMessage());
             }
         }
     }

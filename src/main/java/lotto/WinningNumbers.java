@@ -18,6 +18,10 @@ public class WinningNumbers {
         return winningNumbers;
     }
 
+    public static int generateBonusNumber() {
+        return Integer.parseInt(Console.readLine());
+    }
+
     private void validateWinningNumbers() {
         // TODO : 예외 처리 구현
         /*
@@ -26,7 +30,7 @@ public class WinningNumbers {
         * */
     }
 
-    private void validateBonusNumbers() {
+    private void validateBonusNumber() {
         // TODO : 예외 처리 구현
         /*
          * 보너스 번호가 1~45 범위 내인가?

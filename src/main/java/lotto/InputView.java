@@ -18,4 +18,10 @@ public class InputView {
         System.out.println("당첨 번호를 입력해 주세요.");
         return WinningNumbers.generateWinningNumbers();
     }
+
+    public int readBonusNumber() {
+        System.out.println("보너스 번호를 입력해 주세요.");
+        return WinningNumbers.generateBonusNumber();
+    }
+
 }
