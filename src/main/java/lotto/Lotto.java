@@ -46,7 +46,8 @@ public class Lotto {
         numbers.sort(Comparator.naturalOrder());
     }
 
-    public List<Integer> getNumbers() {
-        return new ArrayList<>(numbers);
+    @Override
+    public String toString() {
+        return numbers.toString(); // [1, 2, 3, 4, 5, 6] 형태
     }
 }
