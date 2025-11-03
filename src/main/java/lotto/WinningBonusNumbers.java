@@ -1,16 +1,13 @@
 package lotto;
 
-import camp.nextstep.edu.missionutils.Console;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
-public class WinningNumbers {
+public class WinningBonusNumbers {
     private final List<Integer> winningNumbers;
     private final int bonusNumber;
 
-    public WinningNumbers(List<Integer> winningNumbers, int bonusNumber) {
+    public WinningBonusNumbers(List<Integer> winningNumbers, int bonusNumber) {
         validateWinningNumbers(winningNumbers);
         validateBonusNumber(bonusNumber, winningNumbers);
 
