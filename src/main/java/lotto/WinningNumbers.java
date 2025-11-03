@@ -7,34 +7,36 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 public class WinningNumbers {
+    private final List<Integer> winningNumbers;
+    private final int bonusNumber;
 
-    public static List<Integer> generateWinningNumbers() {
-        StringTokenizer st = new StringTokenizer(Console.readLine(), ",");
-        List<Integer> winningNumbers = new ArrayList<>();
-        while (st.hasMoreTokens()) {
-            winningNumbers.add(Integer.parseInt(st.nextToken()));
-        }
+    public WinningNumbers(List<Integer> winningNumbers, int bonusNumber) {
+        validateWinningNumbers(winningNumbers);
+        validateBonusNumber(bonusNumber, winningNumbers);
 
-        return winningNumbers;
+        List<Integer> sorted = new ArrayList<>(winningNumbers);
+        sortByAsc(sorted);
+        this.winningNumbers = sorted;
+        this.bonusNumber = bonusNumber;
     }
 
-    public static int generateBonusNumber() {
-        return Integer.parseInt(Console.readLine());
+    private void validateWinningNumbers(List<Integer> numbers) {
+        // TODO : 구현
     }
 
-    private void validateWinningNumbers() {
-        // TODO : 예외 처리 구현
-        /*
-        * 당첨 번호가 쉼표(,)로 올바르게 구분되어 있는가?
-        * 당첨 번호가 1~45 범위 내이며 중복되지 않는가?
-        * */
+    private void validateBonusNumber(int bonus, List<Integer> numbers) {
+        // TODO : 구현
     }
 
-    private void validateBonusNumber() {
-        // TODO : 예외 처리 구현
-        /*
-         * 보너스 번호가 1~45 범위 내인가?
-         * 보너스 번호가 당첨 번호와 중복되지 않는가?
-         * */
+    private void sortByAsc(List<Integer> numbers) {
+        // TODO : 오름차순 정렬 구현
+    }
+
+    public List<Integer> getWinningNumbers() {
+        // TODO : 구현
+    }
+
+    public int getBonusNumber() {
+        // TODO : 구현
     }
 }

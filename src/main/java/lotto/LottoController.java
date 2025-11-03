@@ -21,6 +21,8 @@ public class LottoController {
 
         // "보너스 번호를 입력해 주세요."
         int bonusNumber = readBonusNumberWithRetry();
+
+        WinningNumbers winningNumbers = new WinningNumbers(winningNumbers, bonusNumber);
     }
 
     private int readMoneyWithRetry() {

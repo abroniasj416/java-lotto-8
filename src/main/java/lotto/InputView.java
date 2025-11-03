@@ -2,6 +2,7 @@ package lotto;
 
 import camp.nextstep.edu.missionutils.Console;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -16,12 +17,17 @@ public class InputView {
 
     public List<Integer> readWinningNumbers() {
         System.out.println("당첨 번호를 입력해 주세요.");
-        return WinningNumbers.generateWinningNumbers();
+        StringTokenizer st = new StringTokenizer(Console.readLine(), ",");
+        List<Integer> numbers = new ArrayList<>();
+        while (st.hasMoreTokens()) {
+            numbers.add(Integer.parseInt(st.nextToken()));
+        }
+        return numbers;
     }
 
     public int readBonusNumber() {
         System.out.println("보너스 번호를 입력해 주세요.");
-        return WinningNumbers.generateBonusNumber();
+        return Integer.parseInt(Console.readLine());
     }
 
 }
