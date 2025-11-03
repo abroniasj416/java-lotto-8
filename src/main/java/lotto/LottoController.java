@@ -2,13 +2,16 @@ package lotto;
 
 public class LottoController {
     private final InputView inputView = new InputView();
+    private final OutputView outputView = new OutputView();
     private LottoMachine lottoMachine;
 
     public void start() {
         int money = readMoneyWithRetry();
+        // "구입금액을 입력해주세요."
         lottoMachine = new LottoMachine(money);
 
-        System.out.println(lottoMachine.getLottoCount() + "개를 구매했습니다.");
+        // "n개를 구매하였습니다."
+        outputView.printPurchaseCount(lottoMachine.getLottoCount());
     }
 
     private int readMoneyWithRetry() {
