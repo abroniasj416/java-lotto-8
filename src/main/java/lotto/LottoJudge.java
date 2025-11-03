@@ -3,7 +3,7 @@ package lotto;
 import java.util.List;
 
 public class LottoJudge {
-    public Rank judge(Lotto lotto, WinningBonusNumbers winningBonusNumbers) {
+    public static Rank judge(Lotto lotto, WinningBonusNumbers winningBonusNumbers) {
         List<Integer> lottoNumbers = lotto.getNumbers();
         List<Integer> winningNumbers = winningBonusNumbers.getWinningNumbers();
 
