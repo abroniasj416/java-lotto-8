@@ -2,6 +2,7 @@ package lotto;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class LottoJudge {
     public static Rank judge(Lotto lotto, WinningBonusNumbers winningBonusNumbers) {
