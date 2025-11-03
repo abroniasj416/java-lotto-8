@@ -1,27 +1,19 @@
 package lotto;
 
+import java.util.HashSet;
 import java.util.List;
 
 public class LottoJudge {
     public static Rank judge(Lotto lotto, WinningBonusNumbers winningBonusNumbers) {
         List<Integer> lottoNumbers = lotto.getNumbers();
-        List<Integer> winningNumbers = winningBonusNumbers.getWinningNumbers();
+        Set<Integer> winningSet = new HashSet<>(winningBonusNumbers.getWinningNumbers());
 
-        int matchCount = 0;
-        for (int lottoNumber : lottoNumbers) {
-            for (int winningNumber : winningNumbers) {
-                if (lottoNumber == winningNumber)
-                    matchCount++;
-            }
-        }
+        int matchCount = (int) lottoNumbers.stream()
+                .filter(winningSet::contains)
+                .count();
 
-        boolean bonusMatch = false;
-        if (matchCount == 5) {
-            for (int lottoNumber : lottoNumbers) {
-                if (lottoNumber == winningBonusNumbers.getBonusNumber())
-                    bonusMatch = true;
-            }
-        }
+        boolean bonusMatch = matchCount == 5
+                && lottoNumbers.contains(winningBonusNumbers.getBonusNumber());
 
         return Rank.from(matchCount, bonusMatch);
     }
