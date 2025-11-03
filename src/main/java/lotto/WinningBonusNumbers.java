@@ -51,9 +51,11 @@ public class WinningBonusNumbers {
 
     public List<Integer> getWinningNumbers() {
         // TODO : 구현
+        return winningNumbers;
     }
 
     public int getBonusNumber() {
-        // TODO : 구현A
+        // TODO : 구현
+        return bonusNumber;
     }
 }
