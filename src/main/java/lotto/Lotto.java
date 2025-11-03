@@ -48,4 +48,8 @@ public class Lotto {
     public String toString() {
         return numbers.toString(); // [1, 2, 3, 4, 5, 6] 형태
     }
+
+    public List<Integer> getNumbers() {
+        return new ArrayList<>(numbers);
+    }
 }
