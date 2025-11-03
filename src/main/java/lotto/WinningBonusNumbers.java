@@ -1,6 +1,7 @@
 package lotto;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class WinningBonusNumbers {
@@ -45,6 +46,7 @@ public class WinningBonusNumbers {
 
     private void sortByAsc(List<Integer> numbers) {
         // TODO : 오름차순 정렬 구현
+        numbers.sort(Comparator.naturalOrder());
     }
 
     public List<Integer> getWinningNumbers() {
@@ -52,6 +54,6 @@ public class WinningBonusNumbers {
     }
 
     public int getBonusNumber() {
-        // TODO : 구현
+        // TODO : 구현A
     }
 }
