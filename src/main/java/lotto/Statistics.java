@@ -25,4 +25,15 @@ public class Statistics {
 
         return rankCount;
     }
+
+    // 매개변수 totalPurchaseAmount에는 lottoMachine.getMoney()를 대입할 예정
+    public double calculateProfitRate(HashMap<Rank, Integer> rankCount, int totalPurchaseAmount) {
+        long profit = Rank.FIRST.getPrize() * rankCount.get(Rank.FIRST)
+                + Rank.SECOND.getPrize() * rankCount.get(Rank.SECOND)
+                + Rank.THIRD.getPrize() * rankCount.get(Rank.THIRD)
+                + Rank.FOURTH.getPrize() * rankCount.get(Rank.FOURTH)
+                + Rank.FIFTH.getPrize() * rankCount.get(Rank.FIFTH);
+
+        return (double) profit / totalPurchaseAmount * 100;
+    }
 }
