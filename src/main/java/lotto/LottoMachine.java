@@ -11,7 +11,6 @@ public class LottoMachine {
     private static final int LOTTO_MIN_NUMBER = 1;
     private static final int LOTTO_MAX_NUMBER = 45;
 
-    // TODO : 구입 금액만큼 로또 발행 수 계산
     private int money;
     private int lottoCount;
 
@@ -34,7 +33,6 @@ public class LottoMachine {
     }
 
     private Lotto generateSingleLotto() {
-        // TODO: 구현
         List<Integer> numbers = Randoms.pickUniqueNumbersInRange(LOTTO_MIN_NUMBER, LOTTO_MAX_NUMBER, LOTTO_NUMBER_COUNT);
         return new Lotto(numbers);
     }

@@ -25,7 +25,6 @@ public class Lotto {
         checkDuplicateNumbers(numbers);
     }
 
-    // TODO: 추가 기능 구현
     // 로또 번호가 1~45 범위 내에 있는지 체크
     private void checkNumberDomain(List<Integer> numbers) {
         for(int n : numbers) {

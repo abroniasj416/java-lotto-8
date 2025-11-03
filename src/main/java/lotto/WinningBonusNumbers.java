@@ -39,7 +39,6 @@ public class WinningBonusNumbers {
     }
 
     private void validateBonusNumber(int bonus, List<Integer> numbers) {
-        // TODO : 구현
         // 보너스 번호가 1~45 사이인가?
         if (bonus < MIN_NUMBER || bonus > MAX_NUMBER)
             throw new IllegalArgumentException("[ERROR] 당첨 번호는 1~45 사이의 숫자여야 합니다.");
@@ -49,12 +48,10 @@ public class WinningBonusNumbers {
     }
 
     private void sortByAsc(List<Integer> numbers) {
-        // TODO : 오름차순 정렬 구현
         numbers.sort(Comparator.naturalOrder());
     }
 
     public List<Integer> getWinningNumbers() {
-        // TODO : 구현
         return winningNumbers;
     }
 
