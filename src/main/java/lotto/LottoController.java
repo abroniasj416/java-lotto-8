@@ -12,6 +12,7 @@ public class LottoController {
 
         // "n개를 구매하였습니다."
         outputView.printPurchaseCount(lottoMachine.getLottoCount());
+        outputView.printLottos(lottoMachine.generateLottos());
     }
 
     private int readMoneyWithRetry() {

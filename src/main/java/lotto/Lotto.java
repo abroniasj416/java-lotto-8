@@ -45,4 +45,8 @@ public class Lotto {
     private void sortByAsc(List<Integer> numbers) {
         numbers.sort(Comparator.naturalOrder());
     }
+
+    public List<Integer> getNumbers() {
+        return new ArrayList<>(numbers);
+    }
 }
