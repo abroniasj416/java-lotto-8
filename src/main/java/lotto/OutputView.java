@@ -5,6 +5,7 @@ import java.util.List;
 
 public class OutputView {
     public void printPurchaseCount(int count) {
+        System.out.println();
         System.out.println(count + "개를 구매했습니다.");
     }
 
@@ -12,9 +13,11 @@ public class OutputView {
         for (Lotto lotto : lottos) {
             System.out.println(lotto);
         }
+        System.out.println();
     }
 
     public void printStatistics(HashMap<Rank, Integer> rankCount) {
+        System.out.println();
         System.out.println("당첨 통계");
         System.out.println("---");
 
