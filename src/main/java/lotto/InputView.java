@@ -17,13 +17,15 @@ public class InputView {
 
     public List<Integer> readWinningNumbers() {
         System.out.println("당첨 번호를 입력해 주세요.");
+        StringTokenizer st;
         try {
-            StringTokenizer st = new StringTokenizer(Console.readLine(), ",");
+            st = new StringTokenizer(Console.readLine(), ",");
         }
         catch(NumberFormatException e) {
             throw new IllegalArgumentException("[ERROR] 당첨 번호는 숫자와 쉼표 구분자(,)만 입력 가능합니다.");
         }
         List<Integer> numbers = new ArrayList<>();
+
         while (st.hasMoreTokens()) {
             numbers.add(Integer.parseInt(st.nextToken()));
         }

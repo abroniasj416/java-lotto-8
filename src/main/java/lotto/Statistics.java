@@ -17,7 +17,7 @@ public class Statistics {
         rankCount.put(Rank.NONE, 0);
     }
 
-    public HashMap<Rank, Integer> calculate(List<Lotto> lottos, WinningBonusNumbers winningBonusNumbers) {
+    public HashMap<Rank, Integer> calculateRankCount(List<Lotto> lottos, WinningBonusNumbers winningBonusNumbers) {
         for (Lotto lotto : lottos) {
             Rank rank = LottoJudge.judge(lotto, winningBonusNumbers);
             rankCount.put(rank, rankCount.get(rank) + 1);
