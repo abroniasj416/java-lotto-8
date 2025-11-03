@@ -35,10 +35,8 @@ public class Lotto {
     }
 
     private void checkDuplicateNumbers(List<Integer> numbers) {
-        for (int i = 0; i < numbers.size() - 1; i++) {
-            if (numbers.get(i) == numbers.get(i + 1)) {
-                throw new IllegalArgumentException("[ERROR] 로또 번호가 중복되었습니다.");
-            }
+        if (numbers.size() != numbers.stream().distinct().count()) {
+            throw new IllegalArgumentException("[ERROR] 로또 번호가 중복되었습니다.");
         }
     }
 
