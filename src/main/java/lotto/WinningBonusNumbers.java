@@ -5,6 +5,10 @@ import java.util.Comparator;
 import java.util.List;
 
 public class WinningBonusNumbers {
+    private static final int WINNING_NUMBER_COUNT = 6; // 당첨 번호 개수
+    private static final int MIN_NUMBER = 1; // 최소 번호
+    private static final int MAX_NUMBER = 45; // 최대 번호
+
     private final List<Integer> winningNumbers;
     private final int bonusNumber;
 
@@ -21,12 +25,12 @@ public class WinningBonusNumbers {
     private void validateWinningNumbers(List<Integer> numbers) {
         // TODO : 구현
         // 당첨번호가 6개인가?
-        if (numbers.size() != 6)
+        if (numbers.size() != WINNING_NUMBER_COUNT)
             throw new IllegalArgumentException("[ERROR] 당첨번호는 6개여야 합니다.");
 
         // 당첨번호가 1~45 사이인가?
         for (int number : numbers) {
-            if (number < 1 || number > 45)
+            if (number < MIN_NUMBER || number > MAX_NUMBER)
                 throw new IllegalArgumentException("[ERROR] 당첨 번호는 1~45 사이의 숫자여야 합니다.");
         }
         // 당첨번호가 중복되지는 않는가?
@@ -37,7 +41,7 @@ public class WinningBonusNumbers {
     private void validateBonusNumber(int bonus, List<Integer> numbers) {
         // TODO : 구현
         // 보너스 번호가 1~45 사이인가?
-        if (bonus < 1 || bonus > 45)
+        if (bonus < MIN_NUMBER || bonus > MAX_NUMBER)
             throw new IllegalArgumentException("[ERROR] 당첨 번호는 1~45 사이의 숫자여야 합니다.");
         // 보너스 번호가 당첨번호와 중복되지는 않는가?
         if (numbers.contains(bonus))
