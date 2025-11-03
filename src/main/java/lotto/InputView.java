@@ -10,9 +10,14 @@ public class InputView {
 
     public int readLottoMoney() {
         System.out.println("구입금액을 입력해 주세요.");
-        int money = Integer.parseInt(Console.readLine());
-        LottoMachine.validate(money);
-        return money;
+        String line = Console.readLine();
+        try {
+            int money = Integer.parseInt(line.trim());
+            LottoMachine.validate(money);
+            return money;
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("[ERROR] 구입 금액은 숫자여야 합니다.");
+        }
     }
 
     public List<Integer> readWinningNumbers() {
